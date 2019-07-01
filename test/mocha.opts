@@ -1,0 +1,4 @@
+--require ts-node/register
+--require ./test/support/setup.spec.ts
+--recursive test/**/*.spec.ts
+--check-leaks
