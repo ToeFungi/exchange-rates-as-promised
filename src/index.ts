@@ -1,7 +1,3 @@
-class Something {
-  public something (): void {
-    console.log('Something')
-  }
-}
+import { Base } from './Base'
 
-export { Something }
+export { Base }
