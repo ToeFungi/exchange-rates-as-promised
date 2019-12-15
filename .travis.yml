@@ -41,5 +41,4 @@ jobs:
             secure: '$SONAR_API_KEY'
     - stage: build
       script:
-        - sed -i 's/<GIT_HASH>/$TRAVIS_COMMIT/g' src/lib/Version.ts
         - npm run build

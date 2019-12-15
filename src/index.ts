@@ -1,3 +1,9 @@
-import { Base } from './Base'
+import { Queries } from './types/Queries'
+import { ExchangeRate } from './ExchangeRate'
+import { Currencies } from './enums/Currencies'
 
-export { Base }
+export {
+  Queries,
+  Currencies,
+  ExchangeRate
+}
