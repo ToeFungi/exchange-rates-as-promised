@@ -79,10 +79,6 @@ class ExchangeRate {
      * Tap log error and rethrow the error
      */
     const tapError = (error: Error): never => {
-      console.error('Error occurred querying Exchange Rates API', {
-        message: error.message,
-        stack: error.stack
-      })
       throw error
     }
 
