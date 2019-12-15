@@ -15,11 +15,11 @@ class ExchangeRate {
   /**
    * Base currency used to convert against
    */
-  private base: string
+  public base: string
   /**
    * Currencies to be converted to
    */
-  private currencies: Currencies[] | Currencies
+  public currencies: Currencies[]
 
   /**
    * ExchangeRate constructor
