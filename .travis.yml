@@ -1,21 +1,45 @@
 language: node_js
 
 node_js:
-  - "10"
-
-addons:
-  sonarcloud:
-    token:
-      secure: "a9d62f889c262b5909478eeb0a596b30585d57fa"
-
-install:
-  - npm i
-
-script:
-  - npm audit
-  - npm run coverage
-  - sonar-scanner
+  - '10'
 
 cache:
   directories:
     - '$HOME/.sonar/cache'
+    - 'node_modules'
+    - 'coverage'
+    - 'build'
+
+stages:
+  - setup
+  - audit
+  - lint
+  - test
+  - sonar
+  - build
+
+jobs:
+  include:
+    - stage: setup
+      script:
+        - npm i
+    - stage: audit
+      script:
+        - npm audit
+    - stage: lint
+      script:
+        - npm run lint
+    - stage: test
+      script:
+        - npm run coverage
+    - stage: sonar
+      script:
+        - sonar-scanner
+      addons:
+        sonarcloud:
+          token:
+            secure: '$SONAR_API_KEY'
+    - stage: build
+      script:
+        - sed -i 's/<GIT_HASH>/$TRAVIS_COMMIT/g' src/lib/Version.ts
+        - npm run build
