@@ -7,7 +7,8 @@
     "build": "webpack",
     "test": "mocha",
     "coverage": "nyc --reporter=lcov mocha",
-    "lint": "tslint -c tslint.json 'src/**/*.ts'"
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "integration": "ts-node test/integration/index.spec.ts"
   },
   "keywords": [
     "API",

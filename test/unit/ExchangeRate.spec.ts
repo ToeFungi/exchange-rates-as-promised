@@ -18,11 +18,6 @@ describe('ExchangeRate', () => {
   })
 
   describe('#setBaseCurrency', () => {
-    it('sets the base currency to be converted from', () => {
-      exchangeRate.setBaseCurrency(Currencies.GBP)
-      return exchangeRate.base.should.deep.equal(Currencies.GBP)
-    })
-
     it('returns an instance of `ExchangeRate`', () => {
       return exchangeRate.setBaseCurrency(Currencies.GBP)
         .should.be.instanceof(ExchangeRate)
@@ -30,11 +25,6 @@ describe('ExchangeRate', () => {
   })
 
   describe('#setCurrencies', () => {
-    it('set the returned converted currencies', () => {
-      exchangeRate.setCurrencies([ Currencies.GBP ])
-      return exchangeRate.currencies.should.deep.equal([ Currencies.GBP ])
-    })
-
     it('returns an instance of `ExchangeRate`', () => {
       return exchangeRate.setCurrencies([ Currencies.GBP ])
         .should.be.instanceof(ExchangeRate)
