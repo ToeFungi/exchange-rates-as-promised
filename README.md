@@ -10,6 +10,17 @@ functionality in an easy to use, easy to implement, promised based fashion. The 
 tests and includes a code analysis through Sonar. There is appropriate documentation illustrating use-cases and examples
 of implementation.
 
+## Contents
+- [Getting Started](#getting-started)
+- [Testing and Tests](#running-tests)
+- [Usage](#usage)
+  - [Setting base currency](#setbasecurrencystring)
+  - [Setting exchange currencies](#setcurrenciesarraycurrencies)
+  - [Setting specific date](#setdatedate)
+  - [Get exchange rates](#getrates)
+  - [Chaining methods](#chaining-setters)
+- [Contributions](#contributions)
+
 ## Getting Started
 This is how to get a copy of this working locally. The only requirement is that Node is installed on the base machine.
 ```bash
