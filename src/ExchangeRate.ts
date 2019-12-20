@@ -9,6 +9,10 @@ import Axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
  */
 class ExchangeRate {
   /**
+   * The URI for particular endpoints of the Exchange Rates API
+   */
+  private uri: string
+  /**
    * Client used to query Exchange Rates API
    */
   private client: AxiosInstance
@@ -25,6 +29,9 @@ class ExchangeRate {
    * ExchangeRate constructor
    */
   constructor() {
+    // Default URI is getting latest exchange rates
+    this.uri = 'latest'
+
     // Default base currency USD
     this.base = Currencies.USD
 
@@ -35,6 +42,7 @@ class ExchangeRate {
       Currencies.GBP
     ]
 
+    // Client used to make request to API
     this.client = Axios.create({
       baseURL: 'https://api.exchangeratesapi.io'
     })
@@ -53,6 +61,16 @@ class ExchangeRate {
    */
   public setCurrencies(currencies: Currencies[]): ExchangeRate {
     this.currencies = currencies
+    return this
+  }
+
+  /**
+   * Set the date for which you want historical exchange rate data for. This will still use the currencies and base
+   * currency set in the request
+   */
+  public setDate(date: Date): ExchangeRate {
+    this.uri = date.toISOString()
+      .split('T')[0]
     return this
   }
 
@@ -83,7 +101,7 @@ class ExchangeRate {
     }
 
     // Get data from Exchange Rates API
-    return this.client.get('/latest', config)
+    return this.client.get(`/${this.uri}`, config)
       .then(formatResponse)
       .catch(tapError)
   }

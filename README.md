@@ -37,57 +37,68 @@ import { ExchangeRate } from './ExchangeRate'
 const exchangeRate = new ExchangeRate()
 ```
 
-##### .setBaseCurrency(string)
+#### .setBaseCurrency(string)
 Set the base currency that the returned currencies will be converted against. You can use the existing enumerated list 
 of supported currencies to select this base currency.
 ```typescript
 exchangeRate.setBaseCurrency(Currencies.GBP)
 ```
 
-##### .setCurrencies(array<Currencies>) 
+#### .setCurrencies(array<Currencies>) 
 Set the currencies you want to be returned from the API. These currency will be converted against the currency 
 stipulated as the base above, alternatively it will default to have a base of USD. Use the existing enumerated list of 
 supported currencies to populate the requested list of currencies.
 ```typescript
 exchangeRate.setCurrencies([
-    Currencies.USD,
-    Currencies.ZAR
+  Currencies.USD,
+  Currencies.ZAR
 ])
 ```
 
-##### .getRates()
+#### .setDate(Date)
+Set the date for which you want the exchange rate data from. This can be any date as far back to 1999. It accepts a
+standard JavaScript Date object.
+```typescript
+const date = new Date('2012-01-31')
+
+exchangeRate.setDate(date)
+```
+
+#### .getRates()
 Generates and submits the request to the API and returns a typed response object within a promise containing the data 
 that has been requested.
 ```typescript
 import { ExchangeResponse } from './ExchangeResponse'
 
 exchangeRate.getRates()
-    .then((response: ExchangeResponse) => console.log({
-        base: response.base,
-        date: response.date,
-        rates: response.rates
-    }))
+  .then((response: ExchangeResponse) => console.log({
+    base: response.base,
+    date: response.date,
+    rates: response.rates
+  }))
 ```
 
-##### Chaining Setters
+#### Chaining Setters
 All of the appropriate setters contained in this library return the instance of the `ExchangeRate` client that the
 method call is being executed on. This means that you can chain the setters for an easier and cleaner implementation.
 ```typescript
 import { ExchangeRate } from './ExchangeRate'
 
+const date = new Date('2012-01-30')
 const exchangeRate = new ExchangeRate()
 
 exchangeRate.setBaseCurrency(Currencies.GBP)
-    .setCurrencies([
-        Currencies.USD,
-        Currencies.ZAR
-    ])
-    .getRates()
-    .then((response: ExchangeResponse) => console.log({
-        base: response.base,
-        date: response.date,
-        rates: response.rates
-    }))
+  .setCurrencies([
+    Currencies.USD,
+    Currencies.ZAR
+  ])
+  .setDate(date)
+  .getRates()
+  .then((response: ExchangeResponse) => console.log({
+    base: response.base,
+    date: response.date,
+    rates: response.rates
+  }))
 ```
 
 ## Contributions
