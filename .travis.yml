@@ -42,9 +42,3 @@ jobs:
     - stage: build
       script:
         - npm run build
-    - stage: deploy
-      branches:
-        only:
-          - master
-      script:
-        - npm publish
