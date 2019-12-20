@@ -1,4 +1,5 @@
 # Exchange Rates As Promised
+[![NPM Version](https://badge.fury.io/js/exchange-rates-as-promised.svg)](https://badge.fury.io/js/exchange-rates-as-promised)
 [![Build Status](https://travis-ci.org/ToeFungi/exchange-rates-as-promised.svg?branch=master)](https://travis-ci.org/ToeFungi/exchange-rates-as-promised)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=exchange-rates-as-promised&metric=alert_status)](https://sonarcloud.io/dashboard?id=exchange-rates-as-promised)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=exchange-rates-as-promised&metric=bugs)](https://sonarcloud.io/dashboard?id=exchange-rates-as-promised)
