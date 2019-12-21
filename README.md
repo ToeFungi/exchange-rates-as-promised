@@ -18,6 +18,7 @@ of implementation.
   - [Setting base currency](#setbasecurrencystring)
   - [Setting exchange currencies](#setcurrenciesarraycurrencies)
   - [Setting specific date](#setdatedate)
+  - [Setting historical date range](#sethistoricaldatedate-date)
   - [Get exchange rates](#getrates)
   - [Chaining methods](#chaining-setters)
 - [Contributions](#contributions)
@@ -76,6 +77,16 @@ const date = new Date('2012-01-31')
 exchangeRate.setDate(date)
 ```
 
+#### .setHistoricalDate(Date, Date)
+Set the historical dates for which the exchange rates should be returned. Note that these rates may not be available for
+each day in the requested time period. The API provides historical data dated back to 1999.
+```typescript
+const endDate = new Date('1999-01-04')
+const startDate = new Date('1999-01-01')
+
+exchangeRate.setHistoricalDate(startDate, endDate)
+```
+
 #### .getRates()
 Generates and submits the request to the API and returns a typed response object within a promise containing the data 
 that has been requested.
@@ -114,6 +125,7 @@ exchangeRate.setBaseCurrency(Currencies.GBP)
 ```
 
 ## Contributions
-This project is completely open source and as such, you are invited to make contributions. Fork the project, make a some
+This project is completely open source and as such, you are invited to make contributions. Fork the project, make some
 changes and make the pull request. Should you have any feedback regarding the functionality, please don't hesitate to
-open an issue so this can be resolved. 
+open an issue so this can be resolved. Please ensure that any pull requests have unit tests that cover any additional
+functionality.
