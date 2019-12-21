@@ -6,6 +6,7 @@ import * as successDefaultResponse from '../samples/success-default-response.jso
 import * as successSetDateResponse from '../samples/success-set-date-response.json'
 import * as successSetBaseResponse from '../samples/success-set-base-response.json'
 import * as successSetCurrenciesResponse from '../samples/success-set-currencies-response.json'
+import * as successSetHistoricalResponse from '../samples/success-set-historical-response.json'
 
 describe('ExchangeRate', () => {
   const base = 'https://api.exchangeratesapi.io'
@@ -48,6 +49,17 @@ describe('ExchangeRate', () => {
         .should.be.instanceof(ExchangeRate)
     })
   })
+
+  describe('#setHistoricalDates', () => {
+    const endDate = new Date('1999-01-31')
+    const startDate = new Date('1999-01-01')
+
+    it('returns an instance of `ExchangeRate`', () => {
+      return exchangeRate.setHistoricalDate(startDate, endDate)
+        .should.be.instanceof(ExchangeRate)
+    })
+  })
+
 
   describe('#getRates', () => {
     it('resolves an `ExchangeResponse` with default date, base and currencies', () => {
@@ -97,6 +109,19 @@ describe('ExchangeRate', () => {
       return exchangeRate.setCurrencies(currencies)
         .getRates()
         .should.become(successSetCurrenciesResponse)
+    })
+
+    it('resolves an `ExchangeResponse` with all currency conversions for the dates requested', () => {
+      const endDate = new Date('1999-01-04')
+      const startDate = new Date('1999-01-01')
+
+      nock(base)
+        .get('/history?base=USD&symbols=USD,EUR,GBP&end_at=1999-01-04&start_at=1999-01-01')
+        .reply(200, successSetHistoricalResponse)
+
+      return exchangeRate.setHistoricalDate(startDate, endDate)
+        .getRates()
+        .should.become(successSetHistoricalResponse)
     })
 
     it('rejects when an error occurs getting data from the API', () => {

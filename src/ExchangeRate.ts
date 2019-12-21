@@ -65,8 +65,18 @@ class ExchangeRate {
    * currency set in the request
    */
   public setDate(date: Date): ExchangeRate {
-    this.uri = date.toISOString()
-      .split('T')[0]
+    this.uri = this.extractDatestamp(date)
+    return this
+  }
+
+  /**
+   * Set the historical dates that the exchange rate data for the specific currencies provided should be returned for
+   */
+  public setHistoricalDate(startDate: Date, endDate: Date): ExchangeRate {
+    this.uri = 'history'
+
+    this.queryParams.end_at = this.extractDatestamp(endDate)
+    this.queryParams.start_at = this.extractDatestamp(startDate)
     return this
   }
 
@@ -97,6 +107,14 @@ class ExchangeRate {
     return this.client.get(`/${this.uri}`, config)
       .then(formatResponse)
       .catch(tapError)
+  }
+
+  /**
+   * Extract the stamp yyyy-mm-dd from the given Date
+   */
+  private extractDatestamp(date: Date): string {
+    return date.toISOString()
+      .split('T')[0]
   }
 }
 
