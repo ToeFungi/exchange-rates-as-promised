@@ -13,7 +13,7 @@ of implementation.
 
 ## Contents
 - [Getting Started](#getting-started)
-- [Testing and Tests](#running-tests)
+- [Installation](#installation)
 - [Usage](#usage)
   - [Setting base currency](#setbasecurrencystring)
   - [Setting exchange currencies](#setcurrenciesarraycurrencies)
@@ -21,6 +21,8 @@ of implementation.
   - [Setting historical date range](#sethistoricaldatedate-date)
   - [Get exchange rates](#getrates)
   - [Chaining methods](#chaining-setters)
+- [Supported Currencies](#supported-currencies)
+- [Unit Tests](#running-tests)
 - [Contributions](#contributions)
 
 ## Getting Started
@@ -31,11 +33,10 @@ $ cd exchange-rates-as-promised
 $ npm i
 ```
 
-## Running Tests
-To run tests, you should be able to simply run be able to run the following.
+## Installation
+Install this Exchange Rates API client via npm.
 ```bash
-$ npm run test
-$ npm run coverage
+$ npm i --save exchange-rates-as-promised
 ```
 
 The testing framework used is Mocha. Chai, Chai-as-promised, nyc and nock are used for assertions, coverage reporting
@@ -122,6 +123,52 @@ exchangeRate.setBaseCurrency(Currencies.GBP)
     date: response.date,
     rates: response.rates
   }))
+```
+
+## Supported Currencies
+The following currencies are currently supported by this client. All of these currencies are listed on the 
+[European Central Bank](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html)
+and updated periodically.
+
+![](https://www.ecb.europa.eu/shared/img/flags/AUD.gif) Australian Dollar (AUD)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/BRL.gif) Brazilian Real (BRL)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/GBP.gif) British Pound Sterline (GBP)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/BGN.gif) Bulgarian Lev (BGN)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/CAD.gif) Canadian Dollar (CAD)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/CNY.gif) Chinese Yuan Renminbi (CNY)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/HRK.gif) Croatian Kuna (HRK)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/CZK.gif) Czech Koruna (CZK)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/DKK.gif) Danish Krone (DKK)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/EUR.gif) Euro (EUR)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/HKD.gif) Hong Kong Dollar (HKD)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/HUF.gif) Hungarian Forint (HUF)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/ISK.gif) Icelandic Krona (ISK)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/IDR.gif) Indonesian Rupiah (IDR)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/INR.gif) Indian Rupee (INR)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/ILS.gif) Israeli Shekel (ILS)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/JPY.gif) Japanese Yen (JPY)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/MYR.gif) Malaysian Ringgit (MYR)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/MXN.gif) Mexican Peso (MXN)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/NZD.gif) New Zealand Dollar (NZD)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/NOK.gif) Norwegian Krone (NOK)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/PHP.gif) Philippine Peso (PHP)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/PLN.gif) Polish Zloty (PLN)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/RON.gif) Romanian Leu (RON)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/RUB.gif) Russian Rouble (RUB)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/SGD.gif) Singapore Dollar (SGD)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/ZAR.gif) South African Rand (ZAR)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/KRW.gif) South Korean Won (KRW)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/SEK.gif) Swedish Krona (SEK)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/CHF.gif) Swiss Franc (CHF)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/THB.gif) Thai Baht (THB)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/TRY.gif) Turkish Lira (TRY)<br />
+![](https://www.ecb.europa.eu/shared/img/flags/USD.gif) US Dollar (USD)<br />
+
+## Running Tests
+To run tests, you should be able to simply run be able to run the following.
+```bash
+$ npm run test
+$ npm run coverage
 ```
 
 ## Contributions

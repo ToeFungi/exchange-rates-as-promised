@@ -1,6 +1,6 @@
 {
   "name": "exchange-rates-as-promised",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A promised based exchange rates API client",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,9 @@
     "Rates",
     "Client",
     "Promise",
-    "Exchange"
+    "Restful",
+    "Exchange",
+    "Currencies"
   ],
   "author": "Alex Pickering",
   "license": "MIT",
