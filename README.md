@@ -21,6 +21,7 @@ of implementation.
   - [Setting historical date range](#sethistoricaldatedate-date)
   - [Get exchange rates](#getrates)
   - [Chaining methods](#chaining-setters)
+  - [Responses](#responses)
 - [Supported Currencies](#supported-currencies)
 - [Unit Tests](#running-tests)
 - [Contributions](#contributions)
@@ -124,6 +125,11 @@ exchangeRate.setBaseCurrency(Currencies.GBP)
     rates: response.rates
   }))
 ```
+
+#### Responses
+There is a standardised response type of `ExchangeResponse` which is altered depending on the request. In the event of
+querying historical data, the `rates` within `ExchangeResponse` will contain the type of `HistoricalRates` whereas any
+other request will contain the type of `Rates`.
 
 ## Supported Currencies
 The following currencies are currently supported by this client. All of these currencies are listed on the 
