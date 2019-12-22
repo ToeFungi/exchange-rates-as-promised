@@ -39,10 +39,7 @@ Install this Exchange Rates API client via npm.
 ```bash
 $ npm i --save exchange-rates-as-promised
 ```
-
-The testing framework used is Mocha. Chai, Chai-as-promised, nyc and nock are used for assertions, coverage reporting
-and mocking external requests, respectively. Should you make a change request, please ensure that the new changes are
-appropriately covered by accompanying unit tests.
+This project only has a single dependency.
 
 ## Usage
 Import the file ExchangeRate client and instantiate a new instance.
@@ -176,6 +173,9 @@ To run tests, you should be able to simply run be able to run the following.
 $ npm run test
 $ npm run coverage
 ```
+The testing framework used is Mocha. Chai, Chai-as-promised, nyc and nock are used for assertions, coverage reporting
+and mocking external requests, respectively. Should you make a change request, please ensure that the new changes are
+appropriately covered by accompanying unit tests.
 
 ## Contributions
 This project is completely open source and as such, you are invited to make contributions. Fork the project, make some
