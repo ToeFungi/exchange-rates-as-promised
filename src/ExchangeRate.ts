@@ -94,7 +94,36 @@ class ExchangeRate {
     /**
      * Format response from API into appropriately typed response
      */
-    const formatResponse = (response: AxiosResponse): ExchangeResponse => response.data as ExchangeResponse
+    const formatResponse = (response: AxiosResponse): any => {
+      const template = response.data
+
+      if (this.uri === 'history') {
+        const formattedRates: { [name: string]: { [name: string]: string } } = {}
+        const symbols = Object.keys(template.rates[Object.keys(template.rates)[0]]) as Currencies[]
+        const dates = Object.keys(template.rates)
+
+        const latest = dates.reduce((acc, date) => {
+          if (acc < date) {
+            return date
+          }
+          return acc
+        })
+
+        symbols.forEach((symbol: Currencies) => {
+          formattedRates[symbol] = {}
+
+          for (const date in template.rates) {
+            if (date === latest) {
+              formattedRates[symbol]['latest'] = template.rates[date][symbol]
+            } else {
+              formattedRates[symbol][date] = template.rates[date][symbol]
+            }
+          }
+        })
+
+        return formattedRates
+      }
+    }
 
     /**
      * Tap log error and rethrow the error
