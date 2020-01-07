@@ -1,8 +1,7 @@
 {
   "name": "exchange-rates-as-promised",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A promised based exchange rates API client",
-  "main": "index.js",
   "scripts": {
     "build": "webpack",
     "test": "mocha",
