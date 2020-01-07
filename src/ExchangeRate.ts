@@ -17,13 +17,9 @@ class ExchangeRate {
    */
   private client: AxiosInstance
   /**
-   * Base currency used to convert against
+   * Query parameters used to query the Exchange Rates API
    */
-  private base: string
-  /**
-   * Currencies to be converted to
-   */
-  private currencies: Currencies[]
+  private readonly queryParams: Queries
 
   /**
    * ExchangeRate constructor
@@ -32,15 +28,15 @@ class ExchangeRate {
     // Default URI is getting latest exchange rates
     this.uri = 'latest'
 
-    // Default base currency USD
-    this.base = Currencies.USD
-
-    // Default returned conversions USD, EUR, GBP
-    this.currencies = [
-      Currencies.USD,
-      Currencies.EUR,
-      Currencies.GBP
-    ]
+    // Query parameters
+    this.queryParams = {
+      base: Currencies.USD,
+      symbols: [
+        Currencies.USD,
+        Currencies.EUR,
+        Currencies.GBP
+      ].toString()
+    }
 
     // Client used to make request to API
     this.client = Axios.create({
@@ -52,7 +48,7 @@ class ExchangeRate {
    * Set the base currency for the other currencies to be converted against
    */
   public setBaseCurrency(base: Currencies): ExchangeRate {
-    this.base = base
+    this.queryParams.base = base
     return this
   }
 
@@ -60,7 +56,7 @@ class ExchangeRate {
    * Set the currencies to convert to
    */
   public setCurrencies(currencies: Currencies[]): ExchangeRate {
-    this.currencies = currencies
+    this.queryParams.symbols = currencies.toString()
     return this
   }
 
@@ -69,8 +65,18 @@ class ExchangeRate {
    * currency set in the request
    */
   public setDate(date: Date): ExchangeRate {
-    this.uri = date.toISOString()
-      .split('T')[0]
+    this.uri = this.extractDatestamp(date)
+    return this
+  }
+
+  /**
+   * Set the historical dates that the exchange rate data for the specific currencies provided should be returned for
+   */
+  public setHistoricalDate(startDate: Date, endDate: Date): ExchangeRate {
+    this.uri = 'history'
+
+    this.queryParams.end_at = this.extractDatestamp(endDate)
+    this.queryParams.start_at = this.extractDatestamp(startDate)
     return this
   }
 
@@ -82,10 +88,7 @@ class ExchangeRate {
      * Setup Axios request configuration
      */
     const config: AxiosRequestConfig = {
-      params: {
-        base: this.base,
-        symbols: this.currencies.toString()
-      } as Queries
+      params: this.queryParams
     }
 
     /**
@@ -104,6 +107,14 @@ class ExchangeRate {
     return this.client.get(`/${this.uri}`, config)
       .then(formatResponse)
       .catch(tapError)
+  }
+
+  /**
+   * Extract the stamp yyyy-mm-dd from the given Date
+   */
+  private extractDatestamp(date: Date): string {
+    return date.toISOString()
+      .split('T')[0]
   }
 }
 
