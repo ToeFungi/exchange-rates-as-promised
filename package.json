@@ -1,9 +1,11 @@
 {
   "name": "exchange-rates-as-promised",
-  "version": "1.0.2",
+  "version": "1.0.3",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "description": "A promised based exchange rates API client",
   "scripts": {
-    "build": "webpack",
+    "build": "tsc",
     "test": "mocha",
     "coverage": "nyc --reporter=lcov mocha",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
