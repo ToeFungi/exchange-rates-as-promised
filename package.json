@@ -14,11 +14,15 @@
   "keywords": [
     "API",
     "Rates",
+    "Forex",
     "Client",
     "Promise",
     "Restful",
     "Exchange",
-    "Currencies"
+    "Currency",
+    "Conversion",
+    "Currencies",
+    "Foreign Exchange"
   ],
   "author": {
     "name": "Alex Pickering",
