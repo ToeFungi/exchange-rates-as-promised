@@ -1,6 +1,7 @@
 .idea/
 .nyc_output/
 
+dist/
 build/
 coverage/
 node_modules/

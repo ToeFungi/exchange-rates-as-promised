@@ -44,7 +44,7 @@ This project only has a single dependency.
 ## Usage
 Import the file ExchangeRate client and instantiate a new instance.
 ```typescript
-import { ExchangeRate } from './ExchangeRate'
+import { ExchangeRate } from 'exchange-rates-as-promised'
 
 const exchangeRate = new ExchangeRate()
 ```
@@ -53,6 +53,8 @@ const exchangeRate = new ExchangeRate()
 Set the base currency that the returned currencies will be converted against. You can use the existing enumerated list 
 of supported currencies to select this base currency.
 ```typescript
+import { Currencies } from 'exchange-rates-as-promised'
+
 exchangeRate.setBaseCurrency(Currencies.GBP)
 ```
 
@@ -61,6 +63,8 @@ Set the currencies you want to be returned from the API. These currency will be 
 stipulated as the base above, alternatively it will default to have a base of USD. Use the existing enumerated list of 
 supported currencies to populate the requested list of currencies.
 ```typescript
+import { Currencies } from 'exchange-rates-as-promised'
+
 exchangeRate.setCurrencies([
   Currencies.USD,
   Currencies.ZAR
@@ -90,7 +94,7 @@ exchangeRate.setHistoricalDate(startDate, endDate)
 Generates and submits the request to the API and returns a typed response object within a promise containing the data 
 that has been requested.
 ```typescript
-import { ExchangeResponse } from './ExchangeResponse'
+import { ExchangeResponse } from 'exchange-rates-as-promised'
 
 exchangeRate.getRates()
   .then((response: ExchangeResponse) => console.log({
@@ -104,7 +108,7 @@ exchangeRate.getRates()
 All of the appropriate setters contained in this library return the instance of the `ExchangeRate` client that the
 method call is being executed on. This means that you can chain the setters for an easier and cleaner implementation.
 ```typescript
-import { ExchangeRate } from './ExchangeRate'
+import { ExchangeRate, Currencies, ExchangeResponse } from 'exchange-rates-as-promised'
 
 const date = new Date('2012-01-30')
 const exchangeRate = new ExchangeRate()
