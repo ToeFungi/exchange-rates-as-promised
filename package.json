@@ -35,26 +35,26 @@
   },
   "homepage": "https://github.com/ToeFungi/exchange-rates-as-promised",
   "dependencies": {
-    "axios": "^0.18.1"
+    "axios": "0.18.1"
   },
   "devDependencies": {
     "@types/chai": "4.1.7",
     "@types/mocha": "5.2.6",
-    "@types/nock": "^9.3.1",
+    "@types/nock": "9.3.1",
     "@types/node": "11.9.5",
     "@types/chai-as-promised": "7.1.0",
     "nyc": "14.1.1",
     "chai": "4.2.0",
-    "nock": "^10.0.6",
-    "mocha": "^6.2.2",
+    "nock": "10.0.6",
+    "mocha": "6.2.2",
     "ts-node": "8.0.2",
-    "tslint": "^5.20.1",
-    "webpack": "^4.41.2",
-    "ts-loader": "^6.2.1",
+    "tslint": "5.20.1",
+    "webpack": "4.41.2",
+    "ts-loader": "6.2.1",
     "typescript": "3.3.3333",
-    "webpack-cli": "^3.3.10",
+    "webpack-cli": "3.3.10",
     "chai-as-promised": "7.1.1",
-    "zip-webpack-plugin": "^3.0.0",
-    "tslint-config-standard": "^9.0.0"
+    "zip-webpack-plugin": "3.0.0",
+    "tslint-config-standard": "9.0.0"
   }
 }

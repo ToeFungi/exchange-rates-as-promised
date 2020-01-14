@@ -25,6 +25,7 @@ of implementation.
 - [Supported Currencies](#supported-currencies)
 - [Unit Tests](#running-tests)
 - [Contributions](#contributions)
+- [License](#license)
 
 ## Getting Started
 This is how to get a copy of this working locally. The only requirement is that Node is installed on the base machine.
@@ -186,3 +187,8 @@ This project is completely open source and as such, you are invited to make cont
 changes and make the pull request. Should you have any feedback regarding the functionality, please don't hesitate to
 open an issue so this can be resolved. Please ensure that any pull requests have unit tests that cover any additional
 functionality.
+
+## License
+MIT License
+
+Copyright (c) 2019 Alex Pickering
