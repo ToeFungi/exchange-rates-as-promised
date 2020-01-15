@@ -8,7 +8,7 @@ cache:
     - '$HOME/.sonar/cache'
     - 'node_modules'
     - 'coverage'
-    - 'build'
+    - 'dist'
 
 stages:
   - setup
