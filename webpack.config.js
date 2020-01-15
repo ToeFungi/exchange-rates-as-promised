@@ -1,32 +1,35 @@
 const path = require('path')
-const ZipPlugin = require('zip-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-  entry: './src/index',
-  mode: 'production',
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        use: 'ts-loader'
-      }
-    ]
+  entry: {
+    'index': './src/index.ts',
+    'index.min': './src/index.ts'
+  },
+  mode: "production",
+  output: {
+    path: path.resolve(__dirname, 'dist')
   },
   resolve: {
     extensions: [
       '.ts',
-      '.js'
+      '.js',
+      '.tsx'
     ]
   },
-  target: 'node',
-  output: {
-    filename: 'index.js',
-    libraryTarget: 'commonjs',
-    path: path.resolve(__dirname, './build')
-  },
+  devtool: 'source-map',
   plugins: [
-    new ZipPlugin({
-      filename: 'index'
+    new UglifyJsPlugin({
+      sourceMap: true,
+      include: /\.min\.js$/
     })
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader'
+      }
+    ]
+  }
 }
