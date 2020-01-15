@@ -61,7 +61,6 @@
     "typescript": "3.3.3333",
     "webpack-cli": "3.3.10",
     "chai-as-promised": "7.1.1",
-    "tslint-config-standard": "9.0.0",
-    "uglifyjs-webpack-plugin": "2.2.0"
+    "tslint-config-standard": "9.0.0"
   }
 }
