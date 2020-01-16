@@ -1,6 +1,6 @@
 {
   "name": "exchange-rates-as-promised",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "A promised based exchange rates API client which provides easy to use functions for exchanging currencies",
@@ -12,7 +12,12 @@
     "integration": "ts-node test/integration/index.spec.ts"
   },
   "files": [
-    "dist"
+    "dist",
+    "test",
+    ".nycrc.json",
+    ".mocharc.js",
+    "tslint.json",
+    "tsconfig.json"
   ],
   "keywords": [
     "API",
@@ -42,7 +47,7 @@
   },
   "homepage": "https://github.com/ToeFungi/exchange-rates-as-promised",
   "dependencies": {
-    "axios": "0.18.1"
+    "axios": "0.19.1"
   },
   "devDependencies": {
     "@types/chai": "4.2.7",
