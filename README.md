@@ -24,6 +24,7 @@ of implementation.
   - [Responses](#responses)
 - [Supported Currencies](#supported-currencies)
 - [Unit Tests](#running-tests)
+- [Issues](#issues)
 - [Contributions](#contributions)
 - [License](#license)
 
@@ -181,6 +182,13 @@ $ npm run coverage
 The testing framework used is Mocha. Chai, Chai-as-promised, nyc and nock are used for assertions, coverage reporting
 and mocking external requests, respectively. Should you make a change request, please ensure that the new changes are
 appropriately covered by accompanying unit tests.
+
+## Issues
+If you find any problems while working with this library, please log an issue 
+[here](https://github.com/ToeFungi/exchange-rates-as-promised/issues) so that development can begin to rectify the 
+error.
+
+Follow development on the Trello board [here](https://trello.com/b/b1t2qIK0/exchange-rates-as-promised).
 
 ## Contributions
 This project is completely open source and as such, you are invited to make contributions. Fork the project, make some
