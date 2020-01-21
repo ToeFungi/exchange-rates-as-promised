@@ -6,10 +6,12 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=exchange-rates-as-promised&metric=code_smells)](https://sonarcloud.io/dashboard?id=exchange-rates-as-promised)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=exchange-rates-as-promised&metric=coverage)](https://sonarcloud.io/dashboard?id=exchange-rates-as-promised)
 
-This is an unofficial client for the [Exchange Rates API](https://exchangeratesapi.io/) and encapsulates all 
-functionality in an easy to use, easy to implement, promised based fashion. The codebase is completely covered by unit
-tests and includes a code analysis through Sonar. There is appropriate documentation illustrating use-cases and examples
-of implementation.
+This is an unofficial client for the [Exchange Rates API](https://exchangeratesapi.io/) and provides easy to use and 
+implement, promised based functionality to retrieve exchange rates including historical data from the API and return it
+in an easy to use model. All functionality provided by the API has been encapsulated.
+
+The codebase is covered by unit tests and has code analysis through sonar to help ensure no bugs creep in. There is 
+documentation illustrating implementation of the code and how to get started should you wish to contribute.
 
 ## Contents
 - [Getting Started](#getting-started)
