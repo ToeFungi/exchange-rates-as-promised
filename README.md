@@ -137,9 +137,10 @@ querying historical data, the `rates` within `ExchangeResponse` will contain the
 other request will contain the type of `Rates`.
 
 ## Supported Currencies
-The following currencies are currently supported by this client. All of these currencies are listed on the 
-[European Central Bank](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html)
-and updated periodically.
+Only currencies listed on the 
+[European Central Bank](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html) 
+are supported by this client at the moment. The following is a list of the currently available and supported currencies.
+The rates of these currencies are updated periodically. 
 
 ![](https://www.countryflags.io/au/shiny/16.png) Australian Dollar (AUD)<br/>
 ![](https://www.countryflags.io/br/shiny/16.png) Brazilian Real (BRL)<br/>
