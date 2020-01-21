@@ -141,39 +141,39 @@ The following currencies are currently supported by this client. All of these cu
 [European Central Bank](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html)
 and updated periodically.
 
-![](https://www.countryflags.io/au/shiny/16.png) Australian Dollar (AUD)<br />
-![](https://www.countryflags.io/br/shiny/16.png) Brazilian Real (BRL)<br />
-![](https://www.countryflags.io/gb/shiny/16.png) British Pound Sterline (GBP)<br />
-![](https://www.countryflags.io/bg/shiny/16.png) Bulgarian Lev (BGN)<br />
-![](https://www.countryflags.io/ca/shiny/16.png) Canadian Dollar (CAD)<br />
-![](https://www.countryflags.io/cn/shiny/16.png) Chinese Yuan Renminbi (CNY)<br />
-![](https://www.countryflags.io/hr/shiny/16.png) Croatian Kuna (HRK)<br />
-![](https://www.countryflags.io/cz/shiny/16.png) Czech Koruna (CZK)<br />
-![](https://www.countryflags.io/dk/shiny/16.png) Danish Krone (DKK)<br />
-![](https://www.countryflags.io/eu/shiny/16.png) Euro (EUR)<br />
-![](https://www.countryflags.io/hk/shiny/16.png) Hong Kong Dollar (HKD)<br />
-![](https://www.countryflags.io/hu/shiny/16.png) Hungarian Forint (HUF)<br />
-![](https://www.countryflags.io/is/shiny/16.png) Icelandic Króna (ISK)<br />
-![](https://www.countryflags.io/id/shiny/16.png) Indonesian Rupiah (IDR)<br />
-![](https://www.countryflags.io/in/shiny/16.png) Indian Rupee (INR)<br />
-![](https://www.countryflags.io/il/shiny/16.png) Israeli Shekel (ILS)<br />
-![](https://www.countryflags.io/jp/shiny/16.png) Japanese Yen (JPY)<br />
-![](https://www.countryflags.io/my/shiny/16.png) Malaysian Ringgit (MYR)<br />
-![](https://www.countryflags.io/mx/shiny/16.png) Mexican Peso (MXN)<br />
-![](https://www.countryflags.io/nz/shiny/16.png) New Zealand Dollar (NZD)<br />
-![](https://www.countryflags.io/no/shiny/16.png) Norwegian Krone (NOK)<br />
-![](https://www.countryflags.io/ph/shiny/16.png) Philippine Peso (PHP)<br />
-![](https://www.countryflags.io/pl/shiny/16.png) Polish Złoty (PLN)<br />
-![](https://www.countryflags.io/ro/shiny/16.png) Romanian Leu (RON)<br />
-![](https://www.countryflags.io/ru/shiny/16.png) Russian Rouble (RUB)<br />
-![](https://www.countryflags.io/sg/shiny/16.png) Singapore Dollar (SGD)<br />
-![](https://www.countryflags.io/za/shiny/16.png) South African Rand (ZAR)<br />
-![](https://www.countryflags.io/kr/shiny/16.png) South Korean Won (KRW)<br />
-![](https://www.countryflags.io/se/shiny/16.png) Swedish Krona (SEK)<br />
-![](https://www.countryflags.io/ch/shiny/16.png) Swiss Franc (CHF)<br />
-![](https://www.countryflags.io/th/shiny/16.png) Thai Baht (THB)<br />
-![](https://www.countryflags.io/tr/shiny/16.png) Turkish Lira (TRY)<br />
-![](https://www.countryflags.io/us/shiny/16.png) US Dollar (USD)<br />
+![](https://www.countryflags.io/au/shiny/16.png) Australian Dollar (AUD)<br/>
+![](https://www.countryflags.io/br/shiny/16.png) Brazilian Real (BRL)<br/>
+![](https://www.countryflags.io/gb/shiny/16.png) British Pound Sterline (GBP)<br/>
+![](https://www.countryflags.io/bg/shiny/16.png) Bulgarian Lev (BGN)<br/>
+![](https://www.countryflags.io/ca/shiny/16.png) Canadian Dollar (CAD)<br/>
+![](https://www.countryflags.io/cn/shiny/16.png) Chinese Yuan Renminbi (CNY)<br/>
+![](https://www.countryflags.io/hr/shiny/16.png) Croatian Kuna (HRK)<br/>
+![](https://www.countryflags.io/cz/shiny/16.png) Czech Koruna (CZK)<br/>
+![](https://www.countryflags.io/dk/shiny/16.png) Danish Krone (DKK)<br/>
+![](https://www.countryflags.io/eu/shiny/16.png) Euro (EUR)<br/>
+![](https://www.countryflags.io/hk/shiny/16.png) Hong Kong Dollar (HKD)<br/>
+![](https://www.countryflags.io/hu/shiny/16.png) Hungarian Forint (HUF)<br/>
+![](https://www.countryflags.io/is/shiny/16.png) Icelandic Króna (ISK)<br/>
+![](https://www.countryflags.io/id/shiny/16.png) Indonesian Rupiah (IDR)<br/>
+![](https://www.countryflags.io/in/shiny/16.png) Indian Rupee (INR)<br/>
+![](https://www.countryflags.io/il/shiny/16.png) Israeli Shekel (ILS)<br/>
+![](https://www.countryflags.io/jp/shiny/16.png) Japanese Yen (JPY)<br/>
+![](https://www.countryflags.io/my/shiny/16.png) Malaysian Ringgit (MYR)<br/>
+![](https://www.countryflags.io/mx/shiny/16.png) Mexican Peso (MXN)<br/>
+![](https://www.countryflags.io/nz/shiny/16.png) New Zealand Dollar (NZD)<br/>
+![](https://www.countryflags.io/no/shiny/16.png) Norwegian Krone (NOK)<br/>
+![](https://www.countryflags.io/ph/shiny/16.png) Philippine Peso (PHP)<br/>
+![](https://www.countryflags.io/pl/shiny/16.png) Polish Złoty (PLN)<br/>
+![](https://www.countryflags.io/ro/shiny/16.png) Romanian Leu (RON)<br/>
+![](https://www.countryflags.io/ru/shiny/16.png) Russian Rouble (RUB)<br/>
+![](https://www.countryflags.io/sg/shiny/16.png) Singapore Dollar (SGD)<br/>
+![](https://www.countryflags.io/za/shiny/16.png) South African Rand (ZAR)<br/>
+![](https://www.countryflags.io/kr/shiny/16.png) South Korean Won (KRW)<br/>
+![](https://www.countryflags.io/se/shiny/16.png) Swedish Krona (SEK)<br/>
+![](https://www.countryflags.io/ch/shiny/16.png) Swiss Franc (CHF)<br/>
+![](https://www.countryflags.io/th/shiny/16.png) Thai Baht (THB)<br/>
+![](https://www.countryflags.io/tr/shiny/16.png) Turkish Lira (TRY)<br/>
+![](https://www.countryflags.io/us/shiny/16.png) US Dollar (USD)<br/>
 
 ## Running Tests
 To run tests, you should be able to simply run be able to run the following.
