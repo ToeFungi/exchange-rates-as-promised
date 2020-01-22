@@ -2,14 +2,15 @@
 [![NPM Version](https://badge.fury.io/js/exchange-rates-as-promised.svg)](https://badge.fury.io/js/exchange-rates-as-promised)
 [![Build Status](https://travis-ci.org/ToeFungi/exchange-rates-as-promised.svg?branch=master)](https://travis-ci.org/ToeFungi/exchange-rates-as-promised)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=exchange-rates-as-promised&metric=alert_status)](https://sonarcloud.io/dashboard?id=exchange-rates-as-promised)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=exchange-rates-as-promised&metric=bugs)](https://sonarcloud.io/dashboard?id=exchange-rates-as-promised)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=exchange-rates-as-promised&metric=code_smells)](https://sonarcloud.io/dashboard?id=exchange-rates-as-promised)
+![David](https://img.shields.io/david/ToeFungi/exchange-rates-as-promised)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=exchange-rates-as-promised&metric=coverage)](https://sonarcloud.io/dashboard?id=exchange-rates-as-promised)
 
-This is an unofficial client for the [Exchange Rates API](https://exchangeratesapi.io/) and encapsulates all 
-functionality in an easy to use, easy to implement, promised based fashion. The codebase is completely covered by unit
-tests and includes a code analysis through Sonar. There is appropriate documentation illustrating use-cases and examples
-of implementation.
+This is an unofficial client for the [Exchange Rates API](https://exchangeratesapi.io/) and provides easy to use and 
+implement, promise based functionality to retrieve exchange rates including historical data from the API and return it
+in an easy to use model. All functionality provided by the API has been encapsulated.
+
+The codebase is covered by unit tests and has code analysis through sonar to help ensure no bugs creep in. There is 
+documentation illustrating implementation of the code and how to get started should you wish to contribute.
 
 ## Contents
 - [Getting Started](#getting-started)
@@ -24,6 +25,7 @@ of implementation.
   - [Responses](#responses)
 - [Supported Currencies](#supported-currencies)
 - [Unit Tests](#running-tests)
+- [Issues](#issues)
 - [Contributions](#contributions)
 - [License](#license)
 
@@ -66,10 +68,12 @@ supported currencies to populate the requested list of currencies.
 ```typescript
 import { Currencies } from 'exchange-rates-as-promised'
 
-exchangeRate.setCurrencies([
-  Currencies.USD,
-  Currencies.ZAR
-])
+const currencies: Currencies[] = [
+    Currencies.USD,
+    Currencies.ZAR
+]
+
+exchangeRate.setCurrencies(currencies)
 ```
 
 #### .setDate(Date)
@@ -112,13 +116,15 @@ method call is being executed on. This means that you can chain the setters for 
 import { ExchangeRate, Currencies, ExchangeResponse } from 'exchange-rates-as-promised'
 
 const date = new Date('2012-01-30')
+const currencies: Currencies[] = [
+    Currencies.USD,
+    Currencies.ZAR
+]
+
 const exchangeRate = new ExchangeRate()
 
 exchangeRate.setBaseCurrency(Currencies.GBP)
-  .setCurrencies([
-    Currencies.USD,
-    Currencies.ZAR
-  ])
+  .setCurrencies(currencies)
   .setDate(date)
   .getRates()
   .then((response: ExchangeResponse) => console.log({
@@ -134,43 +140,44 @@ querying historical data, the `rates` within `ExchangeResponse` will contain the
 other request will contain the type of `Rates`.
 
 ## Supported Currencies
-The following currencies are currently supported by this client. All of these currencies are listed on the 
-[European Central Bank](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html)
-and updated periodically.
+Only currencies listed on the 
+[European Central Bank](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html) 
+are supported by this client at the moment. The following is a list of the currently available and supported currencies.
+The rates of these currencies are updated periodically. 
 
-![](https://www.ecb.europa.eu/shared/img/flags/AUD.gif) Australian Dollar (AUD)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/BRL.gif) Brazilian Real (BRL)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/GBP.gif) British Pound Sterline (GBP)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/BGN.gif) Bulgarian Lev (BGN)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/CAD.gif) Canadian Dollar (CAD)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/CNY.gif) Chinese Yuan Renminbi (CNY)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/HRK.gif) Croatian Kuna (HRK)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/CZK.gif) Czech Koruna (CZK)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/DKK.gif) Danish Krone (DKK)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/EUR.gif) Euro (EUR)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/HKD.gif) Hong Kong Dollar (HKD)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/HUF.gif) Hungarian Forint (HUF)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/ISK.gif) Icelandic Krona (ISK)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/IDR.gif) Indonesian Rupiah (IDR)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/INR.gif) Indian Rupee (INR)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/ILS.gif) Israeli Shekel (ILS)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/JPY.gif) Japanese Yen (JPY)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/MYR.gif) Malaysian Ringgit (MYR)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/MXN.gif) Mexican Peso (MXN)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/NZD.gif) New Zealand Dollar (NZD)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/NOK.gif) Norwegian Krone (NOK)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/PHP.gif) Philippine Peso (PHP)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/PLN.gif) Polish Zloty (PLN)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/RON.gif) Romanian Leu (RON)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/RUB.gif) Russian Rouble (RUB)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/SGD.gif) Singapore Dollar (SGD)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/ZAR.gif) South African Rand (ZAR)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/KRW.gif) South Korean Won (KRW)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/SEK.gif) Swedish Krona (SEK)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/CHF.gif) Swiss Franc (CHF)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/THB.gif) Thai Baht (THB)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/TRY.gif) Turkish Lira (TRY)<br />
-![](https://www.ecb.europa.eu/shared/img/flags/USD.gif) US Dollar (USD)<br />
+![](https://www.countryflags.io/au/shiny/16.png) Australian Dollar (AUD)<br/>
+![](https://www.countryflags.io/br/shiny/16.png) Brazilian Real (BRL)<br/>
+![](https://www.countryflags.io/gb/shiny/16.png) British Pound Sterline (GBP)<br/>
+![](https://www.countryflags.io/bg/shiny/16.png) Bulgarian Lev (BGN)<br/>
+![](https://www.countryflags.io/ca/shiny/16.png) Canadian Dollar (CAD)<br/>
+![](https://www.countryflags.io/cn/shiny/16.png) Chinese Yuan Renminbi (CNY)<br/>
+![](https://www.countryflags.io/hr/shiny/16.png) Croatian Kuna (HRK)<br/>
+![](https://www.countryflags.io/cz/shiny/16.png) Czech Koruna (CZK)<br/>
+![](https://www.countryflags.io/dk/shiny/16.png) Danish Krone (DKK)<br/>
+![](https://www.countryflags.io/eu/shiny/16.png) Euro (EUR)<br/>
+![](https://www.countryflags.io/hk/shiny/16.png) Hong Kong Dollar (HKD)<br/>
+![](https://www.countryflags.io/hu/shiny/16.png) Hungarian Forint (HUF)<br/>
+![](https://www.countryflags.io/is/shiny/16.png) Icelandic Króna (ISK)<br/>
+![](https://www.countryflags.io/id/shiny/16.png) Indonesian Rupiah (IDR)<br/>
+![](https://www.countryflags.io/in/shiny/16.png) Indian Rupee (INR)<br/>
+![](https://www.countryflags.io/il/shiny/16.png) Israeli Shekel (ILS)<br/>
+![](https://www.countryflags.io/jp/shiny/16.png) Japanese Yen (JPY)<br/>
+![](https://www.countryflags.io/my/shiny/16.png) Malaysian Ringgit (MYR)<br/>
+![](https://www.countryflags.io/mx/shiny/16.png) Mexican Peso (MXN)<br/>
+![](https://www.countryflags.io/nz/shiny/16.png) New Zealand Dollar (NZD)<br/>
+![](https://www.countryflags.io/no/shiny/16.png) Norwegian Krone (NOK)<br/>
+![](https://www.countryflags.io/ph/shiny/16.png) Philippine Peso (PHP)<br/>
+![](https://www.countryflags.io/pl/shiny/16.png) Polish Złoty (PLN)<br/>
+![](https://www.countryflags.io/ro/shiny/16.png) Romanian Leu (RON)<br/>
+![](https://www.countryflags.io/ru/shiny/16.png) Russian Rouble (RUB)<br/>
+![](https://www.countryflags.io/sg/shiny/16.png) Singapore Dollar (SGD)<br/>
+![](https://www.countryflags.io/za/shiny/16.png) South African Rand (ZAR)<br/>
+![](https://www.countryflags.io/kr/shiny/16.png) South Korean Won (KRW)<br/>
+![](https://www.countryflags.io/se/shiny/16.png) Swedish Krona (SEK)<br/>
+![](https://www.countryflags.io/ch/shiny/16.png) Swiss Franc (CHF)<br/>
+![](https://www.countryflags.io/th/shiny/16.png) Thai Baht (THB)<br/>
+![](https://www.countryflags.io/tr/shiny/16.png) Turkish Lira (TRY)<br/>
+![](https://www.countryflags.io/us/shiny/16.png) US Dollar (USD)<br/>
 
 ## Running Tests
 To run tests, you should be able to simply run be able to run the following.
@@ -181,6 +188,13 @@ $ npm run coverage
 The testing framework used is Mocha. Chai, Chai-as-promised, nyc and nock are used for assertions, coverage reporting
 and mocking external requests, respectively. Should you make a change request, please ensure that the new changes are
 appropriately covered by accompanying unit tests.
+
+## Issues
+If you find any problems while working with this library, please log an issue 
+[here](https://github.com/ToeFungi/exchange-rates-as-promised/issues) so that development can begin to rectify the 
+error.
+
+Follow development on the Trello board [here](https://trello.com/b/b1t2qIK0/exchange-rates-as-promised).
 
 ## Contributions
 This project is completely open source and as such, you are invited to make contributions. Fork the project, make some
