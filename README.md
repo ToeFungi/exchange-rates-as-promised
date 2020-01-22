@@ -2,12 +2,11 @@
 [![NPM Version](https://badge.fury.io/js/exchange-rates-as-promised.svg)](https://badge.fury.io/js/exchange-rates-as-promised)
 [![Build Status](https://travis-ci.org/ToeFungi/exchange-rates-as-promised.svg?branch=master)](https://travis-ci.org/ToeFungi/exchange-rates-as-promised)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=exchange-rates-as-promised&metric=alert_status)](https://sonarcloud.io/dashboard?id=exchange-rates-as-promised)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=exchange-rates-as-promised&metric=bugs)](https://sonarcloud.io/dashboard?id=exchange-rates-as-promised)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=exchange-rates-as-promised&metric=code_smells)](https://sonarcloud.io/dashboard?id=exchange-rates-as-promised)
+![David](https://img.shields.io/david/ToeFungi/exchange-rates-as-promised)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=exchange-rates-as-promised&metric=coverage)](https://sonarcloud.io/dashboard?id=exchange-rates-as-promised)
 
 This is an unofficial client for the [Exchange Rates API](https://exchangeratesapi.io/) and provides easy to use and 
-implement, promised based functionality to retrieve exchange rates including historical data from the API and return it
+implement, promise based functionality to retrieve exchange rates including historical data from the API and return it
 in an easy to use model. All functionality provided by the API has been encapsulated.
 
 The codebase is covered by unit tests and has code analysis through sonar to help ensure no bugs creep in. There is 
@@ -69,10 +68,12 @@ supported currencies to populate the requested list of currencies.
 ```typescript
 import { Currencies } from 'exchange-rates-as-promised'
 
-exchangeRate.setCurrencies([
-  Currencies.USD,
-  Currencies.ZAR
-])
+const currencies: Currencies[] = [
+    Currencies.USD,
+    Currencies.ZAR
+]
+
+exchangeRate.setCurrencies(currencies)
 ```
 
 #### .setDate(Date)
@@ -115,13 +116,15 @@ method call is being executed on. This means that you can chain the setters for 
 import { ExchangeRate, Currencies, ExchangeResponse } from 'exchange-rates-as-promised'
 
 const date = new Date('2012-01-30')
+const currencies: Currencies[] = [
+    Currencies.USD,
+    Currencies.ZAR
+]
+
 const exchangeRate = new ExchangeRate()
 
 exchangeRate.setBaseCurrency(Currencies.GBP)
-  .setCurrencies([
-    Currencies.USD,
-    Currencies.ZAR
-  ])
+  .setCurrencies(currencies)
   .setDate(date)
   .getRates()
   .then((response: ExchangeResponse) => console.log({
