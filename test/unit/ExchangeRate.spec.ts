@@ -60,7 +60,6 @@ describe('ExchangeRate', () => {
     })
   })
 
-
   describe('#getRates', () => {
     it('resolves an `ExchangeResponse` with default date, base and currencies', () => {
       nock(base)
