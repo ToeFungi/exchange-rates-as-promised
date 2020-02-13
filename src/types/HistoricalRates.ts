@@ -9,7 +9,7 @@ interface HistoricalRates {
     /**
      * Currency and value
      */
-    [name: string]: number
+    [name: string]: string
   }
 }
 

@@ -5,7 +5,7 @@ interface Rates {
   /**
    * Currency and value
    */
-  [name: string]: number
+  [name: string]: string
 }
 
 export { Rates }

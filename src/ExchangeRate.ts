@@ -3,6 +3,7 @@ import { Currencies } from './enums/Currencies'
 import { ExchangeResponse } from './types/ExchangeResponse'
 
 import Axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
+import { RatesMapper } from './lib/RatesMapper'
 
 /**
  * ExchangeRate class used to query the Exchange Rates API
@@ -94,7 +95,11 @@ class ExchangeRate {
     /**
      * Format response from API into appropriately typed response
      */
-    const formatResponse = (response: AxiosResponse): ExchangeResponse => response.data as ExchangeResponse
+    const formatResponse = ({ data }: AxiosResponse): ExchangeResponse => ({
+      rates: RatesMapper.remapRatesResponse(data),
+      date: data.date,
+      base: data.base
+    })
 
     /**
      * Tap log error and rethrow the error

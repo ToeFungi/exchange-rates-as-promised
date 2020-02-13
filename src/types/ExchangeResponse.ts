@@ -1,4 +1,4 @@
-import { Currencies, HistoricalRates, Rates } from '..'
+import { Currencies, ExchangeRates } from '..'
 
 /**
  * Representation of the response from the Exchange Rates API
@@ -15,7 +15,7 @@ interface ExchangeResponse {
   /**
    * Conversion rates against the base currency
    */
-  rates: HistoricalRates | Rates
+  rates: ExchangeRates
 }
 
 export { ExchangeResponse }
