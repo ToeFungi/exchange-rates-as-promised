@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - '10'
+  - '12'
 
 cache:
   directories:
@@ -12,10 +12,7 @@ cache:
 
 stages:
   - setup
-  - audit
-  - lint
-  - test
-  - sonar
+  - quality
   - build
 
 jobs:
@@ -23,22 +20,21 @@ jobs:
     - stage: setup
       script:
         - npm i
-    - stage: audit
-      script:
-        - npm audit
-    - stage: lint
-      script:
-        - npm run lint
-    - stage: test
-      script:
-        - npm run coverage
-    - stage: sonar
-      script:
-        - sonar-scanner
+
+    - stage: quality
+      script: npm audit
+      name: audit
+    - script: npm run lint
+      name: lint
+    - script: npm run coverage
+      name: coverage
+    - script: sonar-scanner
+      name: sonar
       addons:
         sonarcloud:
-          token:
-            secure: '$SONAR_API_KEY'
+          organization: "skaleb"
+          token: "$SONAR_API_KEY"
+
     - stage: build
       script:
         - npm run build
