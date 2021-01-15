@@ -1,11 +1,11 @@
 {
   "name": "exchange-rates-as-promised",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "A promised based exchange rates API client which provides easy to use functions for exchanging currencies",
   "scripts": {
-    "build": "webpack",
+    "build": "tsc",
     "test": "mocha",
     "coverage": "nyc --reporter=lcov mocha",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
@@ -48,7 +48,7 @@
   },
   "homepage": "https://github.com/ToeFungi/exchange-rates-as-promised",
   "dependencies": {
-    "axios": "0.19.2"
+    "axios": "0.21.1"
   },
   "devDependencies": {
     "@types/chai": "4.2.11",
@@ -59,12 +59,10 @@
     "chai": "4.2.0",
     "nock": "12.0.3",
     "mocha": "7.1.2",
-    "ts-node": "8.10.1",
     "tslint": "6.1.2",
-    "webpack": "4.43.0",
+    "ts-node": "8.10.1",
     "ts-loader": "6.2.1",
     "typescript": "3.9.2",
-    "webpack-cli": "3.3.11",
     "chai-as-promised": "7.1.1",
     "tslint-config-standard": "9.0.0"
   }
