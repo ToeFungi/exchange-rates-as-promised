@@ -34,7 +34,6 @@ jobs:
         sonarcloud:
           organization: "skaleb"
           token: "$SONAR_API_KEY"
-
     - stage: build
       script:
         - npm run build
