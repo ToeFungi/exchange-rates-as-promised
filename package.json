@@ -48,7 +48,7 @@
   },
   "homepage": "https://github.com/ToeFungi/exchange-rates-as-promised",
   "dependencies": {
-    "axios": "0.19.2"
+    "axios": "0.21.1"
   },
   "devDependencies": {
     "@types/chai": "4.2.11",
