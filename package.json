@@ -64,7 +64,7 @@
     "webpack": "4.43.0",
     "ts-loader": "6.2.1",
     "typescript": "3.9.2",
-    "webpack-cli": "3.3.11",
+    "webpack-cli": "3.3.12",
     "chai-as-promised": "7.1.1",
     "tslint-config-standard": "9.0.0"
   }
